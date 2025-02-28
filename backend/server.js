@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const dotenv = require('dotenv');
+const handlebars = require('express3-handlebars')
 
 const clientRouter = require('./routes/clientRouter.js');
 const {
@@ -14,12 +15,17 @@ const { reqLog } = require('./middlewares/log.js');
 const app = express();
 dotenv.config();
 
+handlebars.create({ defaultLayout:'main' });
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
+
+
 const PORT = process.env.PORT || 8000;
 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname,'..', 'frontend')));
+app.use(express.static(path.join(__dirname,'..', 'view','public')));
 app.use('/test/1',express.static(path.join(__dirname,'..', 'frontend','pages','test1')))
 app.use('/test/2',express.static(path.join(__dirname,'..', 'frontend','pages','test2')))
 
