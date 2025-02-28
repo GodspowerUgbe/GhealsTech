@@ -1,0 +1,258 @@
+@font-face{
+  font-family:'neoda';
+  src:url('../fonts/neoda/neoda.otf') format('otf') , url('../fonts/neoda/neoda.ttf') format('truetype');
+}
+
+@font-face{
+  font-family:'caviar dreams';
+  src:url('../fonts/caviar_dreams/CaviarDreams_Bold.ttf');
+}
+
+@font-face {
+  font-family: 'bosca';
+  src: url('../fonts/creativemarket-bosca-4964373/CreativeMarket\ -\ Bosca\ 4964373/Bosca Regular.ttf'), url('../fonts/creativemarket-bosca-4964373/CreativeMarket\ -\ Bosca\ 4964373/Bosca Regular.otf');
+}
+
+
+
+*{
+   margin:0;
+   padding:0;
+   box-sizing:border-box;
+}
+
+:root{
+  --col:#1a1f1f;
+  --bgCol:#dee7e4;
+  --sep:#384e47;
+  --awardsCol:#3f3c3c;
+  --buttBorderCol:#6a696b;
+  --mainSepH2Col:#a4a4a7;
+  --expertiseListCol:#6a6d62;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  color:var(--col);
+  background-color:var(--bgCol);
+  font-family:'bosca',sans-serif;
+}
+
+main > *,
+footer{
+  transition: top 4s;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+button{
+  transition: scale 0.5s;
+  cursor:pointer;
+  color: var(--col);
+}
+
+button:hover{
+  scale:1.2;
+}
+
+
+
+
+
+
+
+
+
+
+header{
+  padding: 0.3cm 0.2cm;
+  font-size: 0.7rem;
+  background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.2)),url('../img/img3.jpg');
+  background-size: cover;
+  background-position: center;
+  margin: 0 0 1.2cm;
+  color:var(--col);
+}
+
+header .header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo span,
+footer .logo{
+  font-family: 'neoda',sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+header ul{
+  list-style-type: none;
+  backdrop-filter: blur(5px);
+  padding: 7px 3px;
+  border-radius: 16px;
+}
+
+header li{
+  display: inline-block;
+  padding: 0 15px;
+  border-right: 1px solid var(--col);
+}
+
+header li:last-of-type{
+  border-right: none;
+}
+
+
+.header > button{
+  border: none;
+  font-size: 0.5rem;
+  font-weight: 600;
+  padding: 1em;
+  border-radius: 16px;
+  color: var(--bgCol);
+  background-color: var(--col);
+}
+
+footer button{
+  border: none;
+  border-radius: 16px;
+  display: block;
+  padding: 1.1em;
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: var(--col);
+  background-color: inherit;
+  border: 1px solid var(--buttBorderCol);
+  margin: 0.6cm 0 0;
+  
+}
+
+footer button + span{
+    display: grid;
+    place-content: center;
+    width: 0.6cm;
+    height: 0.6cm;
+    border-radius:50%;
+    border: 1px solid #6a696b;
+    margin-left: auto;
+    transition: transform .5s,background-color .5s,color .5s;
+}
+
+footer button + span{
+    transform: rotate(-45deg);
+    background-color: var(--col);
+    color: var(--bgCol);
+    border: none;
+}
+
+
+footer.contact-us{
+  background-color: var(--sep);
+  padding: 10px ;
+  font-size: 0.7rem;
+  color: #c2c3c0fc;
+}
+
+footer h2{
+  font-size:0.7rem;
+  margin-bottom: 0.2cm;
+}
+
+footer > hr{
+  border-color: #545551;
+  margin-bottom: 0.3cm;
+}
+
+footer .flex:last-child{
+  align-items: center;
+}
+
+footer ul{
+  list-style-type: none;
+}
+
+footer .flex:last-child li{
+  display: inline-block;
+  padding: 10px 5px;
+}
+
+footer h2 + .flex > p{
+  font-size:1.6rem;
+  font-weight: 400;
+}
+
+footer button{
+  margin: 0;
+  border: none;
+  background-color: var(--col);
+  color: var(--bgCol);
+  width: 2cm;
+  display: inline-block;
+}
+
+footer button a{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+footer button + span{
+  font-size: 0.9rem;
+  margin-left: 0;
+  display: inline-block;
+  padding-left: 0.3em;
+}
+
+footer button + span:hover{
+  transform: rotate(315deg);
+}
+
+footer .flex mark{
+  background-color: inherit;
+  color: var(--col);
+}
+
+footer address{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+footer address ul{
+  text-align: right;
+}
+
+footer  h2 + .flex{
+  margin-bottom:0.6cm
+}
+
+
+
+@media (prefers-color-scheme:dark){
+  :root{
+    --col:whitesmoke;
+    --bgCol:#1a1f1f;
+    --awardsCol:#7e7e80;
+  }
+}
+
+
+@media (max-width:600px){
+  header ul{
+      display: none;
+  }
+
+  footer .flex{
+    display: flex;
+  }
+
+}

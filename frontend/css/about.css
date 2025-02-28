@@ -1,0 +1,86 @@
+header{
+    background: inherit;
+    margin: 0;
+}
+
+
+main > h1{
+    font-size: 3.2rem;
+    font-family: 'caviar dreams',sans-serif;
+    letter-spacing: -3px;
+    text-indent: 5px;
+    margin-bottom: 2.5cm;
+}
+
+section.about-brief{
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0 10px;
+}
+
+.about-brief section,
+.value section{
+    text-indent: 20px;
+    width: min(100%,60ch);
+}
+
+.about-brief p,
+.value p{
+    font-size: 0.6rem ;
+    font-weight: 400;
+    text-align: right;
+    margin: 0 0 10px;
+}
+
+section.value{
+    padding: 0 10px 10px;
+    background-color: var(--sep);
+    color: rgb(245, 245, 245);
+}
+
+main > .img{
+    height: 10cm;
+    background-image: url('../img/workspace.jpg');
+    background-position: center;
+    background-size:cover;
+    transition: background-image 1s;
+}
+
+.value table{
+    background-color: #2a3232;
+    font-size: 0.7rem;
+    border-collapse: collapse;
+    width: clamp(8cm,100%,15cm);
+    margin: 0.8cm 0 1cm auto;
+}
+
+.value tr{
+    transition: background-color 1s,color 1s;
+    display:grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-auto-rows: auto;
+    place-content: center;
+    border-bottom: 2px solid var(--sep);
+    padding: 10px;
+}
+
+.value td{
+    vertical-align: top;
+}
+
+
+
+.value + div{
+    background-image: url('../img/pc.jpg');
+    height: 10cm;
+    background-position: center;
+    background-size:cover;
+}
+
+
+
+@media (max-width:700px){
+    main > .img{
+        background-image: url('../img/tools.jpg');
+    }
+}
