@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <link href="/css/gen.css" rel="stylesheet" />
+    {{{_sections.style}}}
+    <script defer src="/js/gen.js"></script>
+    <script defer src="/js/index.js"></script>
+  </head>
+  <body>
+    <header>
+      <section class="header">
+        <div class="logo">
+          <img />
+          <span><a href="">GHEALS TECH</a></span>
+        </div>
+        <ul>
+            {{{_sections.headerLinks}}}
+        </ul>
+        <button>GET IN TOUCH</button>
+      </section>
+      {{{_sections.hero}}}
+    </header>
+    <main>
+      {{{_sections.main}}}
+    </main>
+    
+
+    <footer class="contact-us">
+      <h2>Contact Us</h2>
+      <section class="flex">
+        <p>Let's <mark>discuss</mark> your vision <button>LET'S TALK</button><span>&RightArrow;</span> <mark>with us</mark></p>
+        <address>
+            <ul>
+                <li>08138556808</li>
+                <li>youremail@gmail.com</li>
+            </ul>
+        </address>
+      </section>
+      <hr noshade=""/>
+      <section class="flex">
+        <h3 class="logo"><a href="">GHEALS TECH</a></h3>
+        <ul>
+            {{{_sections.footerLinks}}}
+          <li><a href="">Terms&amp;Condition</a></li>
+        </ul>
+        <p>&copy;GhealsTech<date id="copy">2024</date> All Rights Preserved</p>
+      </section>
+    </footer>
+  </body>
+</html>

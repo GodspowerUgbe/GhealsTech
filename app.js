@@ -1,7 +1,17 @@
 const express = require('express');
 const path = require('path');
 const dotenv = require('dotenv');
-const handlebars = require('express3-handlebars')
+const handlebars = require('express3-handlebars').create(
+    {
+        defaultLayout: 'main',
+        helpers: {
+            section: function (name, options) {
+                if(!this._sections) this._sections = {};
+                this._sections[name] = options.fn(this);
+                return null;
+                }
+            }
+    })
 
 const clientRouter = require('./routes/clientRouter.js');
 const {
@@ -15,31 +25,24 @@ const { reqLog } = require('./middlewares/log.js');
 const app = express();
 dotenv.config();
 
-handlebars.create({ defaultLayout:'main' });
+app.disable('x-powered-by');
+
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-
-
-const PORT = process.env.PORT || 8000;
+app.set('PORT', process.env.PORT || 8000);
 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname,'..', 'view','public')));
-app.use('/test/1',express.static(path.join(__dirname,'..', 'frontend','pages','test1')))
-app.use('/test/2',express.static(path.join(__dirname,'..', 'frontend','pages','test2')))
 
 app.use(reqLog); //Request Logger
-
 
 app.use('/', clientRouter);
 
 app.use(serverErrHandler);
 
-app.listen(PORT, err => {
-    if(err){
-        return console.error(`An error occured : ${err}`);
-    }
-    // connectDB(); db not yet implemented
-    console.log(`Server is running at PORT: ${PORT}`);
-})
+
+
+
+module.exports = app;
