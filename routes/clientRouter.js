@@ -1,8 +1,10 @@
 const express = require('express');
 
-const {
-   index,about,contact
-} = require('../middlewares/routes.js');
+const index = require('./index.js');
+const about = require('./about.js');
+const contact = require('./contact.js');
+
+
 const clientRouter = express.Router();
 
 clientRouter.get('/', index).

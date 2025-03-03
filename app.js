@@ -18,7 +18,8 @@ const {
     serverErrHandler,
     error404
 } = require('./routes/error.js');
-const { reqLog } = require('./middlewares/log.js');
+
+// const { reqLog } = require('./middlewares/log.js'); log.js is missing
 
 // const connectDB = require('./db/config.js'); db not implemented yet
 
@@ -34,9 +35,9 @@ app.set('PORT', process.env.PORT || 8000);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname,'..', 'view','public')));
+app.use(express.static(path.join(__dirname,'public')));
 
-app.use(reqLog); //Request Logger
+// app.use(reqLog);  line 22
 
 app.use('/', clientRouter);
 
