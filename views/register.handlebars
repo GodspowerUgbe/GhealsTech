@@ -1,0 +1,49 @@
+{{#section 'title'}}Register{{/section}}
+
+
+{{#section 'style'}}
+    <link href="/css/login.css" rel="stylesheet" />
+    <link href="/css/register.css" rel="stylesheet" />
+    <script src="/js/register.js" defer></script>
+{{/section}}
+
+{{#section 'headerLinks'}}
+    <li><a href="/">Home</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/about">About</a></li>
+{{/section}}
+
+{{#section 'main'}}
+    <main>
+        <form action="/register" method="post">
+            <h2>Create an account with Us</h2>
+            
+            <label for="name">Name</label>
+            <input name="firstName" type="text" id="name" placeholder="First" required />
+            <input name="lastName" type="text" placeholder="Last" required />
+            <p class="error">Your names are required</p>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="youremail@email.com" required />
+            <p class="error">Please enter your email as it is required</p>
+            
+            <label for="pass" >Password</label>
+            <input type="password" id="pass" name="pass"  required/>
+            <p class="error">Please enter your password as it is required</p>
+            
+            <label for="phone">Phone(optional)</label>
+            <input type="tel" id="phone" name="telNumber" placeholder="xxx-xxx-xxxx" />
+
+            <button>Sign Up</button>
+            <p>Already registered? <a href="/login">Sign in</a></p>
+                        
+        </form>
+    </main>
+{{/section}}
+
+{{#section 'footerLinks'}}
+    <li><a href="./">Home</a></li>
+    <li><a href="">Service</a></li>
+    <li><a href="">Project</a></li>
+    <li><a href="./contact">Contact Us</a></li>
+{{/section}}

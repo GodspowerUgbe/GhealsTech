@@ -1,0 +1,14 @@
+main > div{
+    background-image:url('/img/500error.svg');
+    min-height:12cm;
+}
+
+main h1{
+    width:12ch;
+}
+
+@media (max-width:600px){
+    main > div{
+        background-image:none;
+    }
+}

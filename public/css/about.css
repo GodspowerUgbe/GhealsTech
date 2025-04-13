@@ -1,5 +1,4 @@
 header{
-    background: inherit;
     margin: 0;
 }
 
@@ -47,7 +46,7 @@ main > .img{
 }
 
 .value table{
-    background-color: #2a3232;
+    background-color: #55547b;
     font-size: 0.7rem;
     border-collapse: collapse;
     width: clamp(8cm,100%,15cm);

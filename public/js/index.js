@@ -26,4 +26,8 @@ function headerScroll() {
     }
 }
 
+
+
+
+
 //window.addEventListener('scroll',throttle(headerScroll,10));

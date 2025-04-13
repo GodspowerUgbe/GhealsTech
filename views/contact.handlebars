@@ -1,0 +1,38 @@
+{{#section 'title'}}Contact us{{/section}}
+
+{{#section 'style'}}
+    <link href="/css/contact.css" rel="stylesheet" />
+{{/section}}
+
+{{#section 'logoLink'}}/{{/section}}
+
+{{#section 'headerLinks'}}
+    <li><a href="/">Home</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/about">About</a></li>
+{{/section}}
+
+{{#section 'main'}}
+    <main>
+        <section class="info">
+            <h1>Contact Us</h1>
+            <p>Feel free to use the form or drop us an email.Phone calls work too.</p>
+            <tel>08138556808</tel>
+            <mailto>myemail@gmail.com</mailto>
+        </section>
+        <form method="post" action="">
+            <label for="name">Name</label>
+            <input name="firstName" type="text" id="name" placeholder="First" />
+            <input name="lastName" type="text" placeholder="Last" />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="youremail@email.com" />
+
+            <label for="phone">Phone(optional)</label>
+            <input type="tel" id="phone" name="phoneNumber" placeholder="xxx-xxx-xxxx" />
+            
+            <label for="msg">Message</label>
+            <textarea id="msg" name="msg"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+{{/section}}

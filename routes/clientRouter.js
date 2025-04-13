@@ -1,14 +1,17 @@
-const express = require('express');
+const dashPage = require('../middlewares/client/dashboard.js');
+// const dashPage = require('../middlewares/client/dashboard.js');
+// const dashPage = require('../middlewares/client/dashboard.js');
+// const dashPage = require('../middlewares/client/dashboard.js');
+// const dashPage = require('../middlewares/client/dashboard.js');
 
-const index = require('./index.js');
-const about = require('./about.js');
-const contact = require('./contact.js');
 
 
-const clientRouter = express.Router();
+const clientRouter = require('./userRouter.js');
 
-clientRouter.get('/', index).
-   get('/about', about).
-   get('/contact',contact);
+clientRouter.get('/dashboard',dashPage).
+    get('/projects',null).
+    get('/invoices',null).
+    get('/payments',null).
+    get('/profile',null);
 
 module.exports = clientRouter;

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="en">
+    <defs>
+        <style>
+            @font-face{
+                font-family:'neoda';
+                src:url('../fonts/neoda/neoda.otf') format('otf') , url('../fonts/neoda/neoda.ttf') format('truetype');
+            }
+        </style>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#a942d8" />
+            <stop offset="100%" stop-color="#2d2c3f" />
+        </linearGradient>
+    </defs>
+    <text x="10" y="20" fill="url(#grad)"
+    font-size='20px' 
+    font-family="neoda" 
+    word-spacing="-5px"
+    >GHEALS TECH</text>
+</svg>

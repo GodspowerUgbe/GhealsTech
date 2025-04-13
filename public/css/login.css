@@ -1,0 +1,115 @@
+main{
+    background-image: url('/img/login.svg');
+    min-height:10cm;
+    background-size:50%;
+    background-position:center right;
+    background-repeat:no-repeat;
+    padding:15vh 0 0.8cm;
+    color: #40075a;
+    width: clamp(10cm,100%,25cm);
+    margin: auto;
+}
+
+main form{
+    padding-inline: 0.5cm;
+    width: clamp(10cm,60%,11cm);
+    font-size: 1rem;
+}
+
+form h2{
+    font-size: 2.5rem;
+    width: 15ch;
+    line-height: 1.4;
+    padding: 0 0 0.5cm;
+}
+
+form label{
+    font-size: 0.7rem;
+    display: block;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+form input,
+form button{
+    display: inline-block;
+    width: 100%;
+    height: 0.9cm;
+    border-radius: 5px;
+    color: #333;
+    border: 1px solid #40075a;
+    margin:15px 0;
+    padding:10px ;
+    padding-right: 0;
+}
+
+form input{
+    background-color: inherit !important;
+    margin-bottom: 5px;
+    height: 1.2cm;
+}
+
+form button{
+    border-radius: 20px;
+    margin: 0.8cm 0 0;
+    color:whitesmoke;
+    border: none;
+    background-color: #40075a;
+    padding: 0;
+    height: 1.1cm;
+
+}
+
+form p{
+    font-size: 0.7rem;
+    padding: 20px 0;
+    text-align: right;
+}
+
+form p > a{
+    font-weight: 600;
+}
+
+
+p.error{
+    transition: opacity 1s;
+    color: #f40442;
+    text-align: left;
+    padding: 0;
+    opacity:0; 
+    position:absolute;
+}
+
+p.active{
+    position:static;
+    opacity: 1;
+}
+
+
+
+
+@media (max-width:600px){
+    body > main{
+        background: inherit;
+    }
+
+    main > form{
+        margin:auto;
+    }
+
+    
+}
+
+@media (prefers-color-scheme:dark){
+    body > main
+    form{
+        color: #9b9a9a;
+    }
+
+    form input{
+        color: silver;
+        border: 1px solid #9b9a9a;
+    }
+
+    
+}

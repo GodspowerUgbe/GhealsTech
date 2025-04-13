@@ -1,0 +1,14 @@
+main{
+    background-image:url('/img/signup.svg');
+}
+
+form input[type='text']{
+    width: 48%;
+}
+
+
+form input:first-of-type{
+    margin-right: 2%;
+}
+
+
