@@ -77,16 +77,14 @@ const logout = async (req, res) => {
     if (!refreshTok) return redirect('/');
     
     const match = await User.findOne({ refreshToken: refreshTok }).exec();
+    res.clearCookie('jwt', { sameSite: true, httpOnly: true });
     if (!match) {
-        res.clearCookie('jwt', { sameSite: true, httpOnly: true });
         return res.redirect('/');
     }
 
     match.refreshToken = '';
     const result = await match.save();
     console.log(result);
-
-    res.clearCookie('jwt', { sameSite: true, httpOnly: true });
     res.redirect('/');
 }
 

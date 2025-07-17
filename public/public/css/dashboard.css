@@ -105,8 +105,8 @@ canvas{
         display: none;
     }
 
-    body > main{
-        grid-template-columns: 1fr;
+    main .groups{
+        grid-column:1 / -1;
     }
 }
 

@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const dotenv = require('dotenv');
-const cookParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 const handlebars = require('express3-handlebars').create(
     {
         defaultLayout: 'main',
@@ -20,7 +20,6 @@ const adminRouter = require('./routes/adminRouter.js');
 const userRouter = require('./routes/userRouter.js');
 const page500 = require('./middlewares/user/page500.js');
 const page404 = require('./middlewares/user/page404.js');
-const cookieParser = require('cookie-parser');
 
 // const { reqLog } = require('./middlewares/log.js'); log.js is missing
 
@@ -40,7 +39,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser()); 
 
-// app.use(reqLog);  line 22
+// app.use(reqLog);  line 25
 
 app.use('/', userRouter);
 app.use('/admin', adminRouter);

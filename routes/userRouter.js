@@ -34,10 +34,10 @@ userRouter.use('/', isJwt).
    // all('*', page404);
 
 
-
 //client routes
-userRouter.use('/', [authController, refresh]).
+userRouter.
    get('/logout', logout).
+   use('/', [authController, refresh]).
    get('/dashboard', dashPage).
    get('/projects', projPage);
    // get('/invoices',null).
