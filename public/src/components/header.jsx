@@ -40,14 +40,10 @@ export default function Header({}){
               </button>
             </div>
             
-
-            
-            
-            
             {/* Mobile Menu */}
           <div className={`transition-[height] duration-400 w-[98vw] m-auto ${isMenuOpen? 'h-50' : 'h-0'} md:hidden bg-slate-800 rounded-lg mt-2 overflow-hidden`}>
-              {['Services', 'About', 'Portfolio', 'Contact'].map((item) => (
-                <a key={item} href={`#${item.toLowerCase()}`} className="block py-2 text-gray-300 hover:text-white transition-colors text-center border-b text-2xl h-1/4">
+              {['Services','About','Contact','FAQ'].map((item) => (
+                <a key={item} href={`/${item.toLowerCase()}`} className="block py-2 text-gray-300 hover:text-white transition-colors text-center border-b text-2xl h-1/4">
                   {item}
                 </a>
               ))}

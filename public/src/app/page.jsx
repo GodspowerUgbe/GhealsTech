@@ -8,11 +8,12 @@ import {
   } from 'lucide-react';
 import Image from 'next/image';
 import Hero from '../components/hero.jsx';
+import Services from '../components/services.jsx';
+import Testimonial from '@/components/testimonial.jsx';
 import styles from './page.module.css';
 
-export default function Home() {
-  
 
+export default function Home() {
   const services = [
     {
       icon: <Code className="w-8 h-8" />,
@@ -36,80 +37,51 @@ export default function Home() {
     }
   ];
 
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      company: "TechStartup Inc.",
-      text: "GhealsTech transformed our vision into a stunning reality. Their expertise in web development is unmatched.",
-      rating: 5
-    },
-    {
-      name: "Michael Chen",
-      company: "E-commerce Plus",
-      text: "The mobile app they developed increased our customer engagement by 200%. Absolutely incredible work!",
-      rating: 5
-    },
-    {
-      name: "Emma Williams",
-      company: "Creative Agency",
-      text: "Professional, reliable, and innovative. GhealsTech delivered beyond our expectations every single time.",
-      rating: 5
-    }
-  ];
-
   return (
     <>
       <Hero />
       <main className='text-[#333]'>
                {/* Services Section */}
-      <section id="services" className="py-20 bg-[#eee] mt-15 backdrop-blur-sm">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="text-center mb-16">
-             <h2 className="text-4xl md:text-5xl font-medium mb-6">
-               Our <span className="">Services</span>
-             </h2>
-             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-               Comprehensive digital solutions tailored to your unique business needs
-             </p>
-           </div>
 
-           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-             {services.map((service, index) => (
-              <div key={index} className="group bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl border border-slate-700 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/10">
-                <div className="text-purple-400 mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
-                <p className="text-gray-300 leading-relaxed">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        <section id="services" className="py-20 bg-[#eee] mt-15 backdrop-blur-sm">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-medium mb-6">
+                  Our <span className="">Services</span>
+                </h2>
+                <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                  Comprehensive digital solutions tailored to your unique business needs
+                </p>
+            </div>
+            
+            <Services services={services}/>
+
+            </div>
+        </section>
 
       {/* Stats Section */}
-      <section className="py-20 ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            {[
-              { number: "150+", label: "Projects Completed" },
-              { number: "50+", label: "Happy Clients" },
-              { number: "5+", label: "Years Experience" },
-              { number: "24/7", label: "Support Available" }
-            ].map((stat, index) => (
-              <div key={index} className="group">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto ">
+          {[
+            { number: '500+', label: 'Projects Delivered' },
+            { number: '98%', label: 'Client Satisfaction' },
+            { number: '50+', label: 'Countries Served' },
+            { number: '24/7', label: 'Support Available' }
+          ].map((stat, index) => (
+            <div key={index} className="text-center group p-2 py-6 md:py-12">
+              <div className="bg-purple-100 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 group-hover:scale-105">
+                <div className="text-3xl md:text-4xl font-bold  mb-2 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
                   {stat.number}
                 </div>
-                <div className="text-gray-500 text-lg">{stat.label}</div>
+                <div className=" text-sm font-medium">
+                  {stat.label}
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-[#eee]">
+      {/* <section className="py-20 bg-[#eee]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-medium text-[#888] mb-6">
@@ -134,7 +106,8 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+        <Testimonial />
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-purple-900 to-pink-900">
@@ -158,20 +131,6 @@ export default function Home() {
 }
 
 
-// export default function GhealsTechLanding() {
-  
-//   return (
-//         {/* Scroll Indicator */}
-//         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-//           <ChevronDown className="w-8 h-8 text-white/60" />
-//         </div>
-//       </section>
-
-
-//    
-//     </div>
-//   );
-// }
 
 
 
