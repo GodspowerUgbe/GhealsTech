@@ -1,9 +1,7 @@
 'use client';
 
 import {
-   ChevronDown, Code, Smartphone,
-   Globe, Users, ArrowRight, Star,
-   Menu, X,LocateOff
+   Mail,MapPin,PhoneIcon
   } from 'lucide-react';
 
   import Image from 'next/image';
@@ -13,20 +11,20 @@ import {useState} from 'react';
   
 export default function Contact(){
     const contactInfo = [
+        // {
+        //     icon:<MapPin />,
+        //     title:'Our Office',
+        //     description:'A desc',
+        //     type:'address'
+        // },
         {
-            icon:<LocateOff />,
-            title:'Our Office',
-            description:'A desc',
-            type:'address'
-        },
-        {
-            icon:<LocateOff />,
+            icon:<Mail />,
             title:'Email Us',
-            description:'geepee1234567890@gmail.com',
+            description:'ghealstech@gmail.com',
             type:'email'
         },
         {
-            icon:<LocateOff />,
+            icon:<PhoneIcon />,
             title:'Call Us',
             description:'+2349138256708',
             type:'tel'
@@ -56,9 +54,9 @@ export default function Contact(){
             </section>
             
             <section className='p-6 py-16'>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="flex flex-wrap justify-center gap-8">
              {contactInfo.map((service, index) => (
-              <div key={index} className="min-h-[6cm] group bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl border border-slate-700 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/10">
+              <div key={index} className="min-h-[3cm] group bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl border border-slate-700 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/10 w-full max-w-[12cm]">
                 <div className="text-purple-400 mb-4 group-hover:scale-110 transition-transform duration-300 w-min mx-auto">
                   {service.icon}
                 </div>

@@ -15,7 +15,7 @@ export default function Services({bgCol,col,subCol,services,shadow}){
                   {service.icon}
                 </div>
                 <h3 className={`text-xl font-semibold ${col ||'text-white'} mb-4 text-center`}>{service.title}</h3>
-                 <p className={`${subCol || 'text-gray-300'} leading-relaxed`}>{service.description}</p>
+                 <p className={`text-center ${subCol || 'text-gray-300'} leading-relaxed`}>{service.description}</p>
               </div>
             ))}
           </div>

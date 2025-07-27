@@ -7,6 +7,7 @@ import {
    Menu, X 
   } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Hero from '../components/hero.jsx';
 import Services from '../components/services.jsx';
 import Testimonial from '@/components/testimonial.jsx';
@@ -80,33 +81,6 @@ export default function Home() {
           ))}
         </div>
 
-      {/* Testimonials Section */}
-      {/* <section className="py-20 bg-[#eee]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-medium text-[#888] mb-6">
-              What Our <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Clients Say</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl border border-slate-700 hover:border-purple-500/50 transition-all duration-300 hover:scale-105">
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-300 mb-6 italic">"{testimonial.text}"</p>
-                <div>
-                  <div className="font-semibold text-white">{testimonial.name}</div>
-                  <div className="text-purple-400">{testimonial.company}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
         <Testimonial />
 
       {/* CTA Section */}
@@ -117,11 +91,13 @@ export default function Home() {
           </h2>
           <p className="text-xl text-purple-100 mb-8">
             Let's discuss your project and bring your vision to life with cutting-edge technology and innovative design.
-          </p>
-          <button className="group bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-white/25 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto">
-            Start Your Project
-            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-          </button>
+            </p>
+            <Link href='/contact'>
+              <button className="group bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-white/25 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto">
+                Start Your Project
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </Link>
         </div>
       </section>
 

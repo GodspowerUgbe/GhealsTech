@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer(){
     return (
       <footer className="bg-slate-900 py-12">
@@ -15,18 +17,18 @@ export default function Footer(){
             <div>
               <h3 className="text-white font-semibold mb-4">Services</h3>
               <ul className="space-y-2 text-gray-400">
-                <li>Web Development</li>
-                <li>Mobile Apps</li>
-                <li>Digital Marketing</li>
-                <li>Brand Strategy</li>
+                <li><Link href='/services'>Web Development</Link></li>
+                <li><Link href='/services'>Mobile Apps</Link></li>
+                <li><Link href='/services'>Digital Marketing</Link></li>
+                <li><Link href='/services'>Brand Strategy</Link></li>
               </ul>
             </div>
             
             <div>
               <h3 className="text-white font-semibold mb-4">Contact</h3>
               <ul className="space-y-2 text-gray-400">
-                <li>hello@ghealstech.com</li>
-                <li>+234 (0) 123 456 789</li>
+                <li><Link href='mailto:ghealstech@gmail.com'>hello@ghealstech.com</Link></li>
+                <li><Link href='tel:+2349138256708'>+234 (0) 913 825 6708</Link></li>
                 <li>Calabar, CrossRiver, Nigeria</li>
               </ul>
             </div>

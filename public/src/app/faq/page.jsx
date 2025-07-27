@@ -22,7 +22,7 @@ const faqs = [
   {
     question: "Do you build mobile applications?",
     answer:
-      "Yes. We build responsive and high-performance mobile apps using technologies like React Native and Flutter.",
+      "Yes. We build responsive and high-performance mobile apps using technologies like React Native and Expo.",
   },
   {
     question: "How does GhealsTech handle data security?",
@@ -45,11 +45,11 @@ export default function FAQPage() {
 
   return (
     <main className="min-h-screen bg-[whitesmoke] px-8 py-16">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Left Column */}
         <div>
-          <div className="mb-2 text-gray-500 uppercase tracking-wide text-sm">📦 FAQs</div>
-          <h1 className="text-4xl font-bold text-purple-700 leading-snug">Frequently Asked<br />Questions</h1>
+          <div className="mb-2 text-gray-500 uppercase tracking-wide text-sm hidden md:block">FAQs</div>
+          <h1 className="text-4xl text-center md:text-start font-bold md:text-6xl text-purple-900 leading-snug">Frequently Asked<br />Questions</h1>
         </div>
 
         {/* Right Column */}
@@ -62,13 +62,11 @@ export default function FAQPage() {
             >
               <div className="flex justify-between items-center">
                 <h2 className="text-lg font-medium text-gray-900">{faq.question}</h2>
-                <span className="text-purple-700">
+                <span className="text-purple-900">
                   {openIndex === index ? <Minus size={20} /> : <Plus size={20} />}
                 </span>
               </div>
-              {openIndex === index && (
-                <p className="text-gray-700 mt-2 transition duration-300">{faq.answer}</p>
-              )}
+               <p className={`text-gray-700 overflow-hidden mt-2 transition-all ${openIndex !== index ? 'max-h-0' : 'max-h-60'} duration-400 ease-in`}>{faq.answer}</p>
             </div>
           ))}
         </div>
