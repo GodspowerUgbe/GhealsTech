@@ -61,14 +61,15 @@ export default function Home() {
         </section>
 
       {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto ">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto " >
           {[
-            { number: '500+', label: 'Projects Delivered' },
+            { number: '50+', label: 'Projects Delivered' },
             { number: '98%', label: 'Client Satisfaction' },
-            { number: '50+', label: 'Countries Served' },
+            { number: '20+', label: 'Countries Served' },
             { number: '24/7', label: 'Support Available' }
           ].map((stat, index) => (
-            <div key={index} className="text-center group p-2 py-6 md:py-12">
+            <div key={index} className="text-center group p-2 py-6 md:py-12" data-aos="fade-up"
+                  data-aos-delay={index * 100}>
               <div className="bg-purple-100 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 group-hover:scale-105">
                 <div className="text-3xl md:text-4xl font-bold  mb-2 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
                   {stat.number}
@@ -84,7 +85,7 @@ export default function Home() {
         <Testimonial />
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-900 to-pink-900">
+      <section className="py-20 bg-gradient-to-r from-purple-900 to-pink-900" data-aos="fade-up">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to Start Your Digital Journey?

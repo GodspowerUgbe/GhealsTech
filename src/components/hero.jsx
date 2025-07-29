@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 export default function Hero(){
     return (
-        <section className='pt-24'>
+        <section className='pt-24' data-aos="fade-up">
             <div className="mb-4 md:mb-24 mx-auto w-fit px-4 py-2 bg-purple-800/20 rounded-full text-purple-900 text-sm font-medium backdrop-blur-sm">
                 ✨ Digital Innovation Starts Here
             </div>

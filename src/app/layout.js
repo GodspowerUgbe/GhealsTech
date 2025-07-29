@@ -1,6 +1,7 @@
 import "../styles/globals.css";
-import Header from '../components/header.jsx'
-import Footer from '../components/footer.jsx'
+import Header from '@/components/header.jsx'
+import Footer from '@/components/footer.jsx'
+import AOSProvider from '@/components/aosProvider'
 
 // export const metadata = {
 //   title: "Create Next App",
@@ -11,7 +12,7 @@ export const metadata = {
     title: 'Gheals Tech – Digital Solutions',
     description: 'Digital agency delivering tech solutions',
     icons: {
-      icon:'./favicon.ico'
+      icon:'/img/favicon.ico'
     }
   }
 
@@ -20,9 +21,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className='scroll-smooth'>
       <body className='bg-[whitesmoke]'
       >
-        <Header />
-        {children}
-        <Footer />
+        <AOSProvider>
+          <Header />
+          {children}
+          <Footer />
+        </AOSProvider>
       </body>
     </html>
   );
